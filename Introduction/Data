@@ -1,6 +1,5 @@
-Input:
-
 /*Enter the data*/
+
 data data;
 input name$gender$age YearExperience$;
 datalines;
@@ -20,4 +19,7 @@ Sharath m 26 2
 Kavana f 22 0 
 Suhas m 25 1
 ;
+run;
+
+proc print data = data;
 run;
