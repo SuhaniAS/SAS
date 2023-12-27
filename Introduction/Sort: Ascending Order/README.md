@@ -15,3 +15,4 @@
 ##### proc print data = data;
 ##### run;
 #
+##### The above mentioned lines can be used only after inputing the data.
