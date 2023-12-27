@@ -5,7 +5,7 @@
 ##### proc print data = data;
 ##### run;
 
-#### For example:
+### For example:
 ##### proc sort data = data;
 ##### by name;
 ##### run;
