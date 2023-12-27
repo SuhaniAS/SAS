@@ -1,7 +1,7 @@
 /* Enter the data */
 
 data data;
-input name$gender$age experianceInYears$;
+input name$gender$age experienceInYears$;
 datalines;
 Swathi f 23 1
 Ram m 24 2
@@ -35,7 +35,12 @@ run;
 
 /* sort the data according to experience in ascending order */
 proc sort data = data;
-  by experianceInYears;
+  by experienceInYears;
+run;
+
+/* sort the experience in descending order */
+proc sort data = data;
+  by descending experienceInYears;
 run;
 
 
