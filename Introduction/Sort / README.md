@@ -16,3 +16,5 @@
 ##### run;
 #
 #### The above mentioned lines can be used only after inputing the data.
+#
+#### Please download the Sas.docx, so that you can see all the codes along with their output.
