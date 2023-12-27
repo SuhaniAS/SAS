@@ -15,5 +15,3 @@
 ##### proc print data = data;
 ##### run;
 #
-#### Output:
-##### (Screenshot 202023-12-27 20211357.png)
