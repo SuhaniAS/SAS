@@ -1,0 +1,41 @@
+/* Enter the data */
+
+data data;
+input name$gender$age experianceInYears$;
+datalines;
+Swathi f 23 1
+Ram m 24 2
+Ammu f 25 2 
+Anu f 26 3
+Keerthana f 25 1
+Abhi m 26 3
+Manisha f 24 3
+Ankitha f 23 0
+Datha m 26 4
+Aniketh m 28 5
+Sanju f 27 4
+Lohith m 25 1
+Sharath m 26 2
+Kavana f 22 0 
+Suhas m 25 1
+;
+proc print data = data;
+run;
+
+
+/* arrange the names in ascending order */
+proc sort data = data;
+  by name;
+run;  
+
+/* sort the data according to age */
+proc sort data = data;
+  by age;
+run;
+
+/* sort the data according to experience in ascending order */
+proc sort data = data;
+  by experianceInYears;
+run;
+
+
