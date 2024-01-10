@@ -1,0 +1,110 @@
+/*Data*/
+data data;
+input Sl_no $ names $ gender $ age $ ;
+datalines;
+1 Swathi f 23 
+2 Suhas m 27
+3 Kavya f 28
+4 Sachin m 32
+5 Suraj m 25
+6 Sharath m 34
+7 Divya f 33
+8 Dishan m 5
+9 Ram m 23
+10 Seetha f 28
+;
+proc print data = data;
+run;
+
+/*Fav_color*/
+data data_1;
+input Sl_no $ fav_color $;
+datalines;
+1 Green
+2 Red
+3 Pink
+4 Orange
+5 Black
+6 White
+7 Orange
+8 Blue
+9 Green
+10 Blue
+;
+proc print data = data_1;
+run;
+
+/*merge two data*/
+data new_data;
+	merge data data_1;
+run;
+proc print data = new_data;
+run;
+
+/*additional data*/
+data data_2;
+input Sl_no $ names $ gender $ age $ fav_color $;
+datalines;
+11 Swamy m 23 Blue
+12 Sushma f 25 Green
+13 Karan m 21 Black
+14 Dhavani f 14 Blue
+15 Moni f 15 Orange
+;
+proc print data = data_2;
+run;
+
+/*concatinate data*/
+data new_data_1;
+	set new_data data_2;
+run;
+
+proc print data = new_data_1;
+run;
+
+/*choose some variables*/
+data fav_color;
+	set new_data_1;
+	keep names fav_color;
+run;
+proc print data = fav_color;
+run;
+
+/*drop a variable*/
+data fav_color_1;
+	set new_data_1;
+	drop age;
+run;
+proc print data = fav_color_1;
+run;
+
+/*delete statement*/
+data age_greater_than_20;
+	set new_data_1;
+	if age<20 then delete;
+run;
+proc print data = age_greater_than_20;
+run;
+
+/*replace with full form*/
+proc format;
+	value $Gen 'm'='male'
+	'f' = 'female';
+run;
+
+proc print data = new_data_1;
+	format gender$Gen.;
+run;
+
+/*change the variable name*/
+proc SQL;
+	create table new_data_3 as
+	select gender as gen,
+	fav_color as fav_col
+	from new_data_1;
+Quit;
+proc print data = new_data_3;
+run;
+
+
+	
